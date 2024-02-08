@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@600;700;800&display=swap');
 
 
@@ -9,8 +9,11 @@
 }
 
 :root{
-  --bg-primary: #cb997eff;
-  --bg-secondary: #ddbea9ff;
+  --bg-primary: #ade8f4ff;
+  --bg-secondary: #90e0efff;
+  --bg-content: #caf0f8ff;
+  --btn-border: #00b4d8ff;
+  --text-color: #03045eff;
 }
 
 /* pallete{
@@ -21,6 +24,18 @@
 --sage: #a5a58dff;
 --reseda-green: #6b705cff;
 } */
+
+/* CSS HEX */
+/* --federal-blue: #03045eff;
+--marian-blue: #023e8aff;
+--honolulu-blue: #0077b6ff;
+--blue-green: #0096c7ff;
+--pacific-cyan: #00b4d8ff;
+--vivid-sky-blue: #48cae4ff;
+--non-photo-blue: #90e0efff;
+--non-photo-blue-2: #ade8f4ff;
+--light-cyan: #caf0f8ff; */
+
 
 * {
   padding: 0;
@@ -34,9 +49,23 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url(../images/most-influential-players-1200.png); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-blend-mode: multiply; */
+  background-attachment: fixed;
   background-color: var(--bg-primary);
-  font-weight: 300;
+  color: var(--text-color);
+  /* font-weight: 300; */
 }
+
+a:visited{
+  color: var(--text-color);
+}
+
 
 .logo {
   width: 5rem;
@@ -45,7 +74,8 @@ body {
 
 header > h1{
   justify-self: flex-start;
-  font-family: "Proza Libre", sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
   margin-left: 2rem;
   /* font-weight: 600; */
   font-size: 4em;
@@ -53,31 +83,63 @@ header > h1{
 
 header {
   display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-content);
+  z-index: 1;
   /* justify-content: center; */
   align-items: center;
   /* justify-content: space-between; */
-  padding-left: 1rem;
-  height: 10vh;
+  padding-left: 7rem;
+  padding-top: 2px;
+  font-family: "Proza Libre", sans-serif;
   /* background-color: aqua; */
+}
+
+aside{
+  width: 7rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-content);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2;
+  font-family: "Proza Libre", sans-serif;
+  text-decoration: none;
+}
+aside>h2{
+  font-size: 1.5rem;
+  padding-top: 4rem;
+}
+aside:hover{
+  width: 24rem;
+}
+aside:hover .sidebar-content{
+  padding-top: 5rem;
+}
+
+.sidebar-link{
+  margin-top: .5rem;
 }
 
 h1{
   display: flex;
-  flex-direction: flex-start;
+  justify-content: center;
 }
 
 h2{
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 nav {
   margin-left: auto;
-  display: flex;
+  /* display: flex; */
   /* justify-content: center; */
   align-items: center;
   /* border: 0.1rem solid black; */
-  width: 20rem;
+  width: 30rem;
 }
 
 .nav-list {
@@ -87,15 +149,28 @@ nav {
 }
 
 .nav-list-item{
-  border: 0.1rem solid black;
+  border: 0.1rem solid var(--btn-border);
   padding: 1rem;
   border-radius: 10%;
   transition: background-color 0.3s ease-out;
 }
 
+
 .nav-list-item:hover{
   background-color: var(--bg-secondary);
   cursor: pointer;
+}
+
+.intro-text{
+  text-align: center;
+}
+
+main{
+  padding-left: 7rem;
+}
+
+article p, article ul{
+  margin: auto;
 }
 
 .intro-pic-container {
@@ -110,7 +185,8 @@ nav {
 
 article {
   /* padding: 0 6rem; */
-  max-width: 960px;
+  padding-top: 5rem;
+  max-width: 860px;
   margin: auto;
   font-family: "Poppins", sans-serif;
 }
@@ -118,7 +194,19 @@ article {
 p,
 .skill-list {
   font-size: 1.25rem;
-  max-width: 70ch;
+  max-width: 60ch;
+}
+
+.content{
+  background-color: var(--bg-content);
+  margin: 2rem 0;
+  border-radius: 2%;
+  padding: 0 .5rem 1rem;
+
+}
+
+.content-intro{
+  border-radius: 20px;
 }
 
 .content,
