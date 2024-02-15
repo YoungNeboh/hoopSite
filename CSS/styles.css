@@ -12,8 +12,9 @@
   --bg-primary: #ade8f4ff;
   --bg-secondary: #90e0efff;
   --bg-content: #caf0f8ff;
-  --btn-border: #00b4d8ff;
-  --text-color: #03045eff;
+  --bg-aside: #d2f3f8;
+  --bg-border: #023e8aff;
+  --text-color:  #03045eff;
 }
 
 /* pallete{
@@ -52,11 +53,11 @@ body {
   margin: 0;
   padding: 0;
   /* background-image: url(../images/most-influential-players-1200.png); */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
   /* background-blend-mode: multiply; */
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-color: var(--bg-primary);
   color: var(--text-color);
   /* font-weight: 300; */
@@ -70,15 +71,16 @@ a:visited{
 .logo {
   width: 5rem;
   height: 5rem;
+  margin-left: 3.5rem;
 }
 
 header > h1{
   justify-self: flex-start;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-left: 2rem;
+  padding-left: 2rem;
   /* font-weight: 600; */
-  font-size: 4em;
+  font-size: 4rem;
 }
 
 header {
@@ -86,37 +88,52 @@ header {
   position: fixed;
   width: 100%;
   background-color: var(--bg-content);
-  z-index: 1;
+  z-index: 2;
   /* justify-content: center; */
   align-items: center;
   /* justify-content: space-between; */
-  padding-left: 7rem;
+  /* padding-left: 7rem; */
   padding-top: 2px;
   font-family: "Proza Libre", sans-serif;
   /* background-color: aqua; */
 }
 
-aside{
+.topic-switch{
+  padding-top: 6rem;
+}
+
+.line-break{
+  padding-top: 1rem;
+}
+
+nav{
   width: 7rem;
-  height: 100vh;
+  height: 100%;
   position: fixed;
-  background-color: var(--bg-content);
+  background-color: var(--bg-aside);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   font-family: "Proza Libre", sans-serif;
   text-decoration: none;
+  transition: width 0.09s ease-in-out;
 }
-aside>h2{
+nav>h2{
   font-size: 1.5rem;
-  padding-top: 4rem;
-}
-aside:hover{
-  width: 24rem;
-}
-aside:hover .sidebar-content{
   padding-top: 5rem;
+}
+nav:hover{
+  width: 24rem;
+  border: 2px solid;
+  border-color: var(--bg-border)
+}
+nav:hover .sidebar-content{
+  padding-top: 5rem;
+}
+
+nav:hover .sidebar-link{
+  padding-top: 2rem;
 }
 
 .sidebar-link{
@@ -133,33 +150,6 @@ h2{
   font-size: 1.5rem;
 }
 
-nav {
-  margin-left: auto;
-  /* display: flex; */
-  /* justify-content: center; */
-  align-items: center;
-  /* border: 0.1rem solid black; */
-  width: 30rem;
-}
-
-.nav-list {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.nav-list-item{
-  border: 0.1rem solid var(--btn-border);
-  padding: 1rem;
-  border-radius: 10%;
-  transition: background-color 0.3s ease-out;
-}
-
-
-.nav-list-item:hover{
-  background-color: var(--bg-secondary);
-  cursor: pointer;
-}
 
 .intro-text{
   text-align: center;
@@ -179,15 +169,21 @@ article p, article ul{
 }
 
 .intro-pic {
-  border-radius: 2%;
-  width: 80vw;
+  border: 2px solid var(--bg-border);
+  border-radius: 10px;
+  /* width: 80vw; */
+  max-width: 100%;
 }
 
 article {
   /* padding: 0 6rem; */
+  box-sizing: content-box;
+  padding: 0 1rem;
+  line-height: 1.5rem;
   padding-top: 5rem;
-  max-width: 860px;
+  max-width: 800px;
   margin: auto;
+
   font-family: "Poppins", sans-serif;
 }
 
@@ -198,9 +194,10 @@ p,
 }
 
 .content{
+  border: 2px solid var(--bg-border);
   background-color: var(--bg-content);
   margin: 2rem 0;
-  border-radius: 2%;
+  border-radius: 20px;
   padding: 0 .5rem 1rem;
 
 }
@@ -217,6 +214,18 @@ p,
   align-items: center; */
 }
 
+.content h2, .content h3, .content h4{
+  text-align: center;
+}
+
+.content h2{
+  font-size: 2rem;
+}
+
+.content h3{
+  font-size: 1.5rem;
+}
+
 .heading{
   display: flex;
   justify-content: flex-start;
@@ -229,3 +238,19 @@ p,
 .skill-list li span{
   font-weight: 700;
 }
+
+.hist-example-2{
+  padding-top: 1rem;
+}
+
+.fa-bars{
+  font-size: 2rem;
+  margin-left: 2.5rem;
+  /* transition: width 0.09s ease-in-out; */
+}
+
+/* .fa-bars:hover nav{
+  width: 24rem;
+  border: 2px solid;
+  border-color: var(--bg-border)
+} */
